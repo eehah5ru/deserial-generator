@@ -1,0 +1,8 @@
+h2 Герои
+
+.pure-g
+	.pure-u-2-3
+		- @characters.each do |character|
+			p
+				b => character.name.join
+				= character.about

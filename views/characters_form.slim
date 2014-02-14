@@ -1,0 +1,42 @@
+h2 Герои
+form action="/characters" method="POST" class="pure-form pure-form-aligned"
+	fieldset
+		legend Общие параметры
+		.pure-control-group		
+			label for="characters_count" Количество героев: 
+			input type="text" name="characters_count"
+			
+	
+		legend Количество характеристик внешности
+		.pure-control-group		
+			label for="appearance_items_min" Минимум: 
+			input type="text" name="appearance_items_min"
+			
+		.pure-control-group
+			label for="appearance_items_max" Максимум:
+			input type="text" name="appearance_items_max"		
+			
+			
+		legend Количество характеристик характера
+					
+		.pure-control-group		
+			label for="features_items_min" Минимум: 
+			input type="text" name="features_items_min"
+			
+		.pure-control-group
+			label for="features_items_max" Максимум: 
+			input type="text" name="featrures_items_max"						
+			
+		legend Количество прочих характеристик
+					
+		.pure-control-group		
+			label for="other_items_min" Минимум: 
+			input type="text" name="other_items_min"
+			
+		.pure-control-group
+			label for="other_items_max" Максимум: 
+			input type="text" name="other_items_max"									
+			
+		
+		
+		input.button type="submit" value="Создать"
