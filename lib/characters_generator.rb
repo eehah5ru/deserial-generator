@@ -74,7 +74,7 @@ class CharacterBuilder
 		character.hair_length = @data_source[:hair_length].get
 		
     # set appearance
-    # character.appearance = @data_source[:appearance].get Options.get.appearance_items_min, Options.get.appearance_items_max
+    character.appearance = @data_source[:appearance].get Options.get.appearance_items_min, Options.get.appearance_items_max
     
     # set features
     character.features = @data_source[:features].get(Options.get.features_items_min, Options.get.features_items_max) unless Options.get.features_items_max == 0
