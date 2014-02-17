@@ -1,5 +1,6 @@
-h2 Герои
-form action="/characters" method="POST" class="pure-form pure-form-aligned"
+h2 Сценарий
+form action="/screenplay" method="POST" class="pure-form pure-form-aligned"
+	h3 Генератор героев
 	fieldset
 		legend Общие параметры
 		.pure-control-group		
@@ -36,6 +37,36 @@ form action="/characters" method="POST" class="pure-form pure-form-aligned"
 		.pure-control-group
 			label for="other_items_max" Максимум: 
 			input type="text" name="other_items_max"									
+			
+		legend Количество монтажных кадров
+					
+		.pure-control-group		
+			label for="activities_min" Минимум: 
+			input type="text" name="activities_min"
+			
+		.pure-control-group
+			label for="activities_max" Максимум: 
+			input type="text" name="activities_max"												
+			
+		legend Количество предметов одежды которая участвует в съемках
+		
+		.pure-control-group		
+			label for="all_dresses_min" Минимум: 
+			input type="text" name="all_dresses_min"
+			
+		.pure-control-group
+			label for="all_dresses_max" Максимум: 
+			input type="text" name="all_dresses_min"																	
+		
+		legend Количество предметов одежды на персонажах
+					
+		.pure-control-group		
+			label for="dresses_min" Минимум: 
+			input type="text" name="dresses_min"
+			
+		.pure-control-group
+			label for="dresses_max" Максимум: 
+			input type="text" name="dresses_min"															
 			
 		
 		
