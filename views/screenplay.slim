@@ -8,7 +8,13 @@ h2 Сценарий
 			p
 				strong => character.name
 				= character.about
-				
+		
+	.pure-u-1-1
+		h3 Реквизит
+	.pure-u-2-3
+		p
+			= @screenplay.all_things.join(". ")
+			
 	.pure-u-1-1
 		h3 Монтажные кадры
 		- @screenplay.activities.each_with_index do |activity, i|

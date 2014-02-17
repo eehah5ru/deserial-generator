@@ -26,7 +26,7 @@ class RandomArray < Array
       indexes << val unless indexes.include?(val)
     end
     
-    return indexes.collect { |i| self[i]}
+    return RandomArray.new(indexes.collect { |i| self[i]})
   end
   
   

@@ -24,6 +24,9 @@ class Options
 	
 	attr_reader :all_dresses_min
 	attr_reader :all_dresses_max
+	
+	attr_reader :all_things_min
+	attr_reader :all_things_max
 
   
   def self.create
@@ -79,6 +82,10 @@ class Options
 		
 		@all_dresses_min = 5
 		@all_dresses_max = 10		
+		
+		@all_things_min = 5
+		@all_things_max = 10				
+		
   end
   
   
@@ -140,7 +147,9 @@ class Options
 			:dresses_min,
 			:dresses_max,
 			:all_dresses_min,
-			:all_dresses_max			
+			:all_dresses_max,
+			:all_things_min,
+			:all_things_max			
 		].each do |option|
 			set_int_variable_from_params option, params
 		end

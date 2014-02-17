@@ -36,11 +36,16 @@ class ScreenplayBuilder
 	def build
 		screenplay = Screenplay.new
 		
+		# characters
 		screenplay.characters = RandomArray.new(@characters_builder.build_many(Options.get.characters_count))
 		
+		# dresses
 		screenplay.all_dresses = RandomArray.new(Dresses.dresses.get(Options.get.all_dresses_min, Options.get.all_dresses_max))
 		
-		activity_in_context_builder = ActivityInContextBuilder.new(screenplay.characters, screenplay.all_dresses)
+		# things
+		screenplay.all_things = Things.things.get(Options.get.all_things_min, Options.get.all_things_max)
+		
+		activity_in_context_builder = ActivityInContextBuilder.new(screenplay)
 		
 		screenplay.activities = activity_in_context_builder.build_many(Activities.activities.get(Options.get.activities_min, Options.get.activities_max))
 		

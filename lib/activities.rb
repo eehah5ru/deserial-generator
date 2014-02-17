@@ -19,6 +19,11 @@ class Activity
 	end
 	
 	
+	def things_count
+		return Unicode::downcase(text).scan(/<things? *>/).length
+	end
+	
+	
 	def character_numbers
 		return Unicode::downcase(text).scan(/<subject *\d+>/).collect{ |i| i.scan(/\d+/)}.uniq.collect{|i| i.first.to_i}.sort
 	end
@@ -34,6 +39,8 @@ class ActivityInContext < OpenStruct
 		result = self.activity.text
 		
 		result = wrap_subjects(result)
+		
+		result = wrap_things(result)
 		
 		return result
 	end
@@ -51,6 +58,19 @@ class ActivityInContext < OpenStruct
 		
 		return result
 	end
+	
+	
+	def wrap_things a_text
+		result = a_text.dup
+		
+		self.activity.things_count.times do 
+			result.sub!(/<things? *>/i, self.things.get.first)
+		end
+		
+		return result
+	end
+	
+	
 end
 
 
@@ -60,16 +80,20 @@ end
 #
 #
 class ActivityInContextBuilder
-	def initialize characters, all_dresses
-		@characters = characters.dup
-		@all_dresses = all_dresses.dup
+	def initialize screenplay
+		@characters = screenplay.characters.dup
+		@all_dresses = screenplay.all_dresses.dup
+		@all_things = screenplay.all_things.dup
 	end
 	
 	def build activity
 		result = ActivityInContext.new
 		result.activity = activity.dup
-		result.characters = {}
-		
+
+		#
+		# characters
+		#
+		result.characters = {}		
 		activity.character_numbers.each do |character_number|
 			result.characters[character_number] = @characters.get.first
 		end
@@ -81,6 +105,11 @@ class ActivityInContextBuilder
 		result.characters.each do |num, character|
 			result.character_dresses[num] = @all_dresses.get(Options.get.dresses_min, Options.get.dresses_max)
 		end
+		
+		#
+		# things
+		#
+		result.things = @all_things.get 1, result.activity.things_count
 		
 		pp result
 		

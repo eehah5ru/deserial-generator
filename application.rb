@@ -6,6 +6,7 @@ require_relative "lib/characters_generator.rb"
 require_relative "lib/screenplay_generator.rb"
 require_relative "lib/activities.rb"
 require_relative "lib/dresses.rb"
+require_relative "lib/things.rb"
 
 
 
@@ -63,6 +64,7 @@ def generate_screenplay params
 	Options.create_from_params! params
 	Activities.directory = "data/activities"
 	Dresses.dresses_file = "data/dresses.txt"
+	Things.things_file = "data/things.txt"
 	
 	# Activities.activities.get
 	
