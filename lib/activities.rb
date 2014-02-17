@@ -43,7 +43,7 @@ class ActivityInContext < OpenStruct
 	
 	
 	def wrap_subjects a_text
-		result = a_text
+		result = a_text.dup
 
 		self.characters.each do |num, character|
 			result.gsub!(/<subject *#{num}>/i, character.name)
@@ -67,7 +67,7 @@ class ActivityInContextBuilder
 	
 	def build activity
 		result = ActivityInContext.new
-		result.activity = activity
+		result.activity = activity.dup
 		result.characters = {}
 		
 		activity.character_numbers.each do |character_number|
@@ -79,8 +79,10 @@ class ActivityInContextBuilder
 		#
 		result.character_dresses = {}
 		result.characters.each do |num, character|
-			result.character_dresses[num] = Dresses.dresses.get(Options.get.dresses_min, Options.get.dresses_max)
+			result.character_dresses[num] = @all_dresses.get(Options.get.dresses_min, Options.get.dresses_max)
 		end
+		
+		pp result
 		
 		return result
 	end

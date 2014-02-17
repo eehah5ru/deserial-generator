@@ -1,7 +1,7 @@
 h2 Сценарий
 
 .pure-g
-	.pure-u-2-3
+	.pure-u-1-1
 		h3 Герои
 	.pure-u-2-3
 		- @screenplay.characters.each do |character|
@@ -9,9 +9,8 @@ h2 Сценарий
 				strong => character.name
 				= character.about
 				
-	.pure-u-2-3
+	.pure-u-1-1
 		h3 Монтажные кадры
-	.pure-u-2-3
 		- @screenplay.activities.each_with_index do |activity, i|
 			h4 
 				| Кадр
@@ -19,13 +18,16 @@ h2 Сценарий
 			/ h5 Участвует персонажей
 			/ => activity.activity.characters_count
 			
-			h5 Персонажи
-			- activity.characters.each do |num, character|
-				=> num
-				strong
-					=> character.name
-				= activity.character_dresses[num].join(". ")
-				br/
-			h5 
-				| Действие
-			= activity.wrapped_text
+			.pure-u-1-3
+				h5 
+					| Персонажи
+				- activity.characters.each do |num, character|
+					=> num
+					strong
+						=> character.name
+					= activity.character_dresses[num].join(". ")
+					br/
+			.pure-u-1-3
+				h5 
+					| Действие
+				= activity.wrapped_text
