@@ -48,6 +48,8 @@ end
 def generate_characters params
   # CharacterBuilder::Options.create!
 
+	Dresses.dresses_file = "data/dresses.txt"
+	
   builder = CharacterBuilder.new(DataSource.new("data/characters.yml"))
   
   characters = []

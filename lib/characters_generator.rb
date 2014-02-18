@@ -20,7 +20,8 @@ class Character < OpenStruct
 			self.hair_lebgth,
       self.appearance,
       self.features,
-      self.other
+      self.other,
+			self.all_dresses.join(". ")
     ].compact.join(" ")
   end
 	
@@ -34,7 +35,8 @@ class Character < OpenStruct
 			self.hair_lebgth,
       self.appearance,
       self.features,
-      self.other
+      self.other,
+			self.all_dresses.join(". ")
     ].compact.join(" ")
 	end
 end
@@ -77,7 +79,12 @@ class CharacterBuilder
     character.appearance = @data_source[:appearance].get Options.get.appearance_items_min, Options.get.appearance_items_max
     
     # set features
+		character.features = RandomArray.new
     character.features = @data_source[:features].get(Options.get.features_items_min, Options.get.features_items_max) unless Options.get.features_items_max == 0
+		
+		# dresses
+		character.all_dresses = RandomArray.new
+		character.all_dresses = RandomArray.new(Dresses.dresses.get(Options.get.all_dresses_min, Options.get.all_dresses_max)) unless Options.get.all_dresses_max == 0
     
     return character
   end  
