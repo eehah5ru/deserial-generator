@@ -39,8 +39,8 @@ class ScreenplayBuilder
 		# characters
 		screenplay.characters = RandomArray.new(@characters_builder.build_many(Options.get.characters_count))
 		
-		# dresses
-		screenplay.all_dresses = RandomArray.new(Dresses.dresses.get(Options.get.all_dresses_min, Options.get.all_dresses_max))
+		# # dresses
+		# screenplay.all_dresses = RandomArray.new(Dresses.dresses.get(Options.get.all_dresses_min, Options.get.all_dresses_max))
 		
 		# things
 		screenplay.all_things = Things.things.get(Options.get.all_things_min, Options.get.all_things_max)

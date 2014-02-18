@@ -82,7 +82,7 @@ end
 class ActivityInContextBuilder
 	def initialize screenplay
 		@characters = screenplay.characters.dup
-		@all_dresses = screenplay.all_dresses.dup
+		# @all_dresses = screenplay.all_dresses.dup
 		@all_things = screenplay.all_things.dup
 	end
 	
@@ -101,10 +101,10 @@ class ActivityInContextBuilder
 		#
 		# dresses
 		#
-		result.character_dresses = {}
-		result.characters.each do |num, character|
-			result.character_dresses[num] = @all_dresses.get(Options.get.dresses_min, Options.get.dresses_max)
-		end
+		# result.character_dresses = {}
+		# result.characters.each do |num, character|
+		# 	result.character_dresses[num] = @all_dresses.get(Options.get.dresses_min, Options.get.dresses_max)
+		# end
 		
 		#
 		# things
