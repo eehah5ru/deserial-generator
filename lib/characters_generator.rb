@@ -7,6 +7,7 @@ require 'pp'
 
 require_relative "utils.rb"
 require_relative "options.rb"
+require_relative "dresses.rb"
 
 class Character < OpenStruct
   def to_s
@@ -21,7 +22,7 @@ class Character < OpenStruct
       self.appearance,
       self.features,
       self.other,
-			self.all_dresses.join(". ")
+			self.all_dresses
     ].compact.join(" ")
   end
 	
@@ -36,7 +37,7 @@ class Character < OpenStruct
       self.appearance,
       self.features,
       self.other,
-			self.all_dresses.join(". ")
+			self.all_dresses
     ].compact.join(" ")
 	end
 end
@@ -83,8 +84,8 @@ class CharacterBuilder
     character.features = @data_source[:features].get(Options.get.features_items_min, Options.get.features_items_max) unless Options.get.features_items_max == 0
 		
 		# dresses
-		character.all_dresses = RandomArray.new
-		character.all_dresses = RandomArray.new(Dresses.dresses.get(Options.get.all_dresses_min, Options.get.all_dresses_max)) unless Options.get.all_dresses_max == 0
+		# character.all_dresses = RandomArray.new
+		character.all_dresses = DressesCategorizedBuilder.builder.build
     
     return character
   end  

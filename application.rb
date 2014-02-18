@@ -49,6 +49,7 @@ def generate_characters params
   # CharacterBuilder::Options.create!
 
 	Dresses.dresses_file = "data/dresses.txt"
+	DressesCategorizedBuilder.dresses_file = "data/dresses_categorized.yml"	
 	
   builder = CharacterBuilder.new(DataSource.new("data/characters.yml"))
   
@@ -66,6 +67,7 @@ def generate_screenplay params
 	Options.create_from_params! params
 	Activities.directory = "data/activities"
 	Dresses.dresses_file = "data/dresses.txt"
+	DressesCategorizedBuilder.dresses_file = "data/dresses_categorized.yml"
 	Things.things_file = "data/things.txt"
 	
 	# Activities.activities.get

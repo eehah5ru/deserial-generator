@@ -1,4 +1,5 @@
 require "ostruct"
+require_relative "dresses.rb"
 # require_relative "generator.rb"
 
 
