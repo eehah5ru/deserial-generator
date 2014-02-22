@@ -37,8 +37,17 @@ class ScreenplayBuilder
 	def build
 		screenplay = Screenplay.new
 		
+		#
 		# characters
-		screenplay.characters = RandomArray.new(@characters_builder.build_many(Options.get.characters_count))
+		#
+		# raise
+		if Options.get.pre_generated_characters == true
+			# get predefined characters
+			screenplay.characters = PredefinedCharacters.get_all
+		else
+			# generate characters
+			screenplay.characters = RandomArray.new(@characters_builder.build_many(Options.get.characters_count))
+		end
 		
 		# # dresses
 		# screenplay.all_dresses = RandomArray.new(Dresses.dresses.get(Options.get.all_dresses_min, Options.get.all_dresses_max))

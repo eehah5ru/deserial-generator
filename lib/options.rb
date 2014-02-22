@@ -6,6 +6,8 @@
 #
 #
 class Options
+	attr_reader	:pre_generated_characters
+	
   attr_reader :appearance_items_min
   attr_reader :features_items_min
   attr_reader :other_items_min
@@ -63,6 +65,8 @@ class Options
   
   
   def initialize
+		@pre_generated_characters = false
+		
     @appearance_items_min = 2
     @appearance_items_max = 5
     
@@ -153,6 +157,12 @@ class Options
 		].each do |option|
 			set_int_variable_from_params option, params
 		end
+		
+		[
+			:pre_generated_characters			
+		].each do |option|
+			set_boolean_variable_from_params option, params
+		end
 	end
 	
   
@@ -176,7 +186,7 @@ class Options
 	
 	
 	#
-	# options setter from params
+	# int options setter from params
 	#
 	def set_int_variable_from_params key, params
 		STDERR.puts "Options: trying to find #{key} in params"
@@ -190,6 +200,21 @@ class Options
 		STDERR.puts "Options: setting #{key} to #{params[key.to_sym]}"
 		
 		self.instance_variable_set "@#{key}", params[key.to_sym].to_i
+	end
+	
+	
+	#
+	# boolean options setter from params
+	#
+	def set_boolean_variable_from_params key, params
+		STDERR.puts "Options: trying to find #{key} in params"	
+		
+		value = false
+		value = true if params[key]
+		
+		STDERR.puts "Options: setting #{key} to #{value}"		
+		
+		self.instance_variable_set "@#{key}", value	
 	end
 end
 # End of Options class

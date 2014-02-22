@@ -1,4 +1,5 @@
 require 'yaml'
+require "unicode"
 #
 #
 # random getter
@@ -36,6 +37,47 @@ class RandomArray < Array
   def get_random_in_range min_value, max_value
     return Random.rand(min_value..(max_value+1))
   end
+end
+
+
+#
+#
+# Random access from plain text file
+# separator in file is "\n"
+#
+#
+
+
+
+class PlainFileRandomAccess < RandomArray
+	def self.splitter= a_splitter
+		@splitter = a_splitter
+	end
+	
+	
+	def self.splitter
+		return "\n" if @splitter.nil?
+		return @splitter
+	end
+	
+	 
+	def self.data_file= a_filename
+		@data_file = a_filename
+	end
+	
+	
+	def self.data
+		return @data unless @data.nil?
+		
+		# create
+		@data = PlainFileRandomAccess.new
+		
+		File.read(@data_file).split(/#{splitter}/).each do |item|
+			@data << item
+		end
+		
+		return @data
+	end
 end
 
 

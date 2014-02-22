@@ -4,39 +4,43 @@ form action="/screenplay" method="POST" class="pure-form pure-form-aligned"
 	fieldset
 		legend Общие параметры
 		.pure-control-group		
+			label for="pre_generated_characters" Использовать сгенерированных героев?
+			input type="checkbox" name="pre_generated_characters" class="characters-toggle" value="use"
+			
+		.pure-control-group		
 			label for="characters_count" Количество героев: 
-			input type="text" name="characters_count"
+			input type="text" name="characters_count" class="characters-toggle-dependent"
 			
 	
 		legend Количество характеристик внешности
 		.pure-control-group		
 			label for="appearance_items_min" Минимум: 
-			input type="text" name="appearance_items_min"
+			input type="text" name="appearance_items_min" class="characters-toggle-dependent"
 			
 		.pure-control-group
 			label for="appearance_items_max" Максимум:
-			input type="text" name="appearance_items_max"		
+			input type="text" name="appearance_items_max" class="characters-toggle-dependent"
 			
 			
 		legend Количество характеристик характера
 					
 		.pure-control-group		
 			label for="features_items_min" Минимум: 
-			input type="text" name="features_items_min"
+			input type="text" name="features_items_min" class="characters-toggle-dependent"
 			
 		.pure-control-group
 			label for="features_items_max" Максимум: 
-			input type="text" name="features_items_max"						
+			input type="text" name="features_items_max" class="characters-toggle-dependent"				
 			
 		legend Количество прочих характеристик
 					
 		.pure-control-group		
 			label for="other_items_min" Минимум: 
-			input type="text" name="other_items_min"
+			input type="text" name="other_items_min" class="characters-toggle-dependent"
 			
 		.pure-control-group
 			label for="other_items_max" Максимум: 
-			input type="text" name="other_items_max"									
+			input type="text" name="other_items_max" class="characters-toggle-dependent"								
 			
 		legend Количество монтажных кадров
 					
@@ -81,3 +85,5 @@ form action="/screenplay" method="POST" class="pure-form pure-form-aligned"
 		
 		
 		input.button type="submit" value="Создать"
+
+script src="/js/screenplay_form.js"

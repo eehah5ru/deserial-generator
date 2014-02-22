@@ -7,6 +7,10 @@ require "unicode"
 #
 #
 class Activity
+	EMOTIONS_REGEXP = /<emotions?.*>/i
+	SPEECH_REGEXP = /<some +words?.*>/i
+	SPACE_REGEXP = /<spaces?.*>/i	
+
 	attr_reader :text
 	
 	def initialize text
@@ -22,6 +26,22 @@ class Activity
 	def things_count
 		return Unicode::downcase(text).scan(/<things? *>/).length
 	end
+	
+	
+	def emotions_count
+		return Unicode::downcase(text).scan(EMOTIONS_REGEXP).length		
+	end
+	
+	
+	def speechs_count
+		return Unicode::downcase(text).scan(SPEECH_REGEXP).length		
+	end	
+	
+	
+	def spaces_count
+		return Unicode::downcase(text).scan(SPACE_REGEXP).length		
+	end
+	
 	
 	
 	def character_numbers
@@ -41,6 +61,12 @@ class ActivityInContext < OpenStruct
 		result = wrap_subjects(result)
 		
 		result = wrap_things(result)
+		
+		result = wrap_emotions(result)
+		
+		result = wrap_speechs(result)
+
+		result = wrap_spaces(result)		
 		
 		return result
 	end
@@ -71,6 +97,37 @@ class ActivityInContext < OpenStruct
 	end
 	
 	
+	def wrap_emotions a_text
+		result = a_text.dup
+		
+		self.activity.emotions_count.times do 
+			result.sub!(Activity::EMOTIONS_REGEXP, Emotions.data.get.first)
+		end
+		
+		return result
+	end
+	
+	
+	def wrap_speechs a_text
+		result = a_text.dup
+		
+		self.activity.speechs_count.times do 
+			result.sub!(Activity::SPEECH_REGEXP, "\"#{Speechs.data.get.first}\"")
+		end
+		
+		return result
+	end
+	
+	
+	def wrap_spaces a_text
+		result = a_text.dup
+		
+		self.activity.spaces_count.times do 
+			result.sub!(Activity::SPACE_REGEXP, Spaces.data.get.first)
+		end
+		
+		return result
+	end
 end
 
 

@@ -7,6 +7,10 @@ require_relative "lib/screenplay_generator.rb"
 require_relative "lib/activities.rb"
 require_relative "lib/dresses.rb"
 require_relative "lib/things.rb"
+require_relative "lib/emotions.rb"
+require_relative "lib/speechs.rb"
+require_relative "lib/spaces.rb"
+require_relative "lib/predefined_characters.rb"
 
 
 
@@ -64,11 +68,19 @@ end
 
 
 def generate_screenplay params
+	#
+	# creaete options
+	#
 	Options.create_from_params! params
+	
 	Activities.directory = "data/activities"
 	Dresses.dresses_file = "data/dresses.txt"
 	DressesCategorizedBuilder.dresses_file = "data/dresses_categorized.yml"
 	Things.things_file = "data/things.txt"
+	Emotions.data_file = "data/emotions.txt"	
+	Speechs.data_file = "data/speechs.txt"	
+	Spaces.data_file = "data/spaces.txt"			
+	PredefinedCharacters.characters_file = "data/predefined_characters.yml"
 	
 	# Activities.activities.get
 	

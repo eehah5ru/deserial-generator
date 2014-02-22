@@ -1,0 +1,32 @@
+Открывается дверь. <subject 1> и <subject 2> выходят из <things>, идут. Останавливаются. Говорят <some words>. Продолжая разговор, вновь идут. <subject 1>  указывает на <things>, чего нет в кадре, и выходит из кадра. <subject 2>  говорит вдогонку <subject 1> <some words> и тоже выходит из кадра
+
+<subject 1> открывает <things>. Роется в <things>. <subject 2> говорит <some words> <subject 1>
+
+<subject 1>  слушает with <emotions>
+
+<subject 2> говорит <some words>
+
+<subject 1> говорит <some words>
+
+ <subject 2> говорить <some words>
+
+ <subject 1> кивает
+
+ <subject 2> говорит <some words>
+
+ <subject 1> говорит <some words>
+
+ <subject 2> говорит <some words>
+
+ <subject 1> говорит <some words>
+
+<subject 2> говорит <some words>
+
+ <subject 1> говорит <some words>
+
+<subject 2> говорит <some words>
+
+<subject 1> садится в <things>, выглядывает из <things> и говорит <some words> <subject 2>
+<things> отъезжает. <subject 1> провожает <things> взглядом.
+
+на дорогу выезжает красная <things> и, резко, с визгом развернувшись, останавливается у <things>.

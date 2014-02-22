@@ -1,0 +1,74 @@
+<camera> все это время медленно смещается вправо. <subject 1> и <subject 2> сидят на <things>. <subject 1> обнимает и целует <subject 2>. <subject 2> читает <things> говорит <some words>. <subject 1> левой рукой достает из-под себя <things>, говорит <some words>, испытывает <emotions>. <subject 1> смотрит на <things>, говорит <some words>.
+ 
+<subject 2> встает с <things>, говорит <some words>, испытывает <emotions>, кидает <things>.
+ 
+<subject 2> отряхивается, произносит <some words>. <subject 1> отвечает <some words>.
+ 
+<subject 2> говорит <some words>, испытывает <emotions>.
+ 
+<subject 1> слушает <subject 2>, оглядыается, произносит  <some words>.
+ 
+<subject 2> говорит <some words>.
+ 
+<subject 1> говорит <some words>, испытывает <emotions>.
+ 
+<subject 2> говорит <some words>, указывает пальцем на <things>.
+ 
+<subject 1> смотрит на <things>, спрашивает <subject 2> <some words>, испытывает <emotions>.
+ 
+<subject 2> говорит <some words>, испытывает <emotions>.
+ 
+<subject 1> слушает <subject 2>, отворачивается.
+ 
+<subject 2> говорит <some words>, испытывает <emotions>, показывает пальцем на <things>, испытывает <emotions>.
+ 
+<subject 1> обращает внимание на <subject 2>.
+ 
+<subject 2> испытывает <emotions>, показывает пальцем на <things>.
+ 
+<subject 1> спрашивает <some words>, голос <subject 2> произносит <some words>. <subject 1> поворачивается.
+ 
+<things> ползет по полу среди разбросанных <things>.
+ 
+<subject 2> говорит <some words>, испытывает <emotions>, показывает пальцем на <things>.
+ 
+<subject 1> говорит <some words>.
+ 
+<subject 2> говорит <some words>, испытывает <emotions>.
+ 
+<things> ползет по полу среди разбросанных <things>.
+ 
+<subject 1> встает с <things>, говорит <some words>. <subject 2> говорит <some words> испытывает <emotions>, трясет руками.
+ 
+<subject 1> говорит <some words> на фоне <things>.
+ 
+<subject 2> смотрит на <things>.
+ 
+<subject 1> оглядывается на <things>, говорит <some words>, указывает пальцем на <things>.
+ 
+<subject 1> говорит <some words> на фоне <things>.
+ 
+<subject 2> говорит <some words>, испытывает <emotions>.
+ 
+<subject 1> говорит <some words>.
+ 
+<subject 2> крутится.
+ 
+<camera> показывает <subject 1> и <subject 2>.
+ 
+<subject 1> говорит <some words>.
+ 
+<subject 2> крутится и закрывает глаза, слушает <subject 1>.
+ 
+<subject 1> говорит <some words>.
+ 
+<camera> крупный план. <subject 2> говорит <some words>, испытывает <emotions>.
+ 
+<camera> крупный план. <subject 1> говорит <some words>, испытывает <emotions>.
+ 
+<camera> крупный план. <subject 2> говорит <some words>, испытывает <emotions>, затыкает уши.
+ 
+<camera> крупный план. <subject 1> говорит <some words>, испытывает <emotions>.
+<camera> общий план. <subject 2> ударяет <sound> по лицу <subject 1>. <subject 1> падает плошмя на пол <sound>.
+ 
+<subject 2> стоит в растерянности.

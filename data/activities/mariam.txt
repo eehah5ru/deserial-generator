@@ -1,0 +1,44 @@
+<subject 1> и <subject 2> сидят в машине на передних сидениях.
+<subject 1> говорит  <some words>
+<subject 2> тем временем затягивается  <things>  и передает  <things> в руки <subject 1>
+
+<subject 2> говорит  <some words>
+
+<subject 1> говорит  <some words>
+<subject 1> затягивается <things>
+
+<subject 2> говорит  <some words>
+
+<subject 1> говорит  <some words>
+
+<subject 2> говорит  <some words>
+
+<subject 1> говорит  <some words>
+
+<subject 1> говорит  <some words>
+
+<subject 1> говорит  <some words>
+<subject 1> судорожно ищет <things> находит, начинает набирать номер.
+
+<subject 2> говорит  <some words>
+<subject 1> противится просьбе <subject 2> и продолжает набирать номер.
+
+
+<subject 1> говорит  <some words>
+<subject 2> говорит  <some words>
+<subject 1> берет <things> лежащую перед ним
+<subject 1> говорит  <some words> держа в одной руке <things> и в другой <things>.
+Затем <subject 1> продолжая говорить <some words> прислоняет к уху <things>, а <things> прислоняет ко рту.
+
+<subject 2> говорит  <some words>
+<subject 2> забирает <things> у <subject 1>
+<subject 2> говорит  <some words> через <things>
+<subject 1> продолжает держать <things> около уха, пытаясь дозвониться. Затем <subject 1> убирает <things> в сторону.
+
+<subject 2> продолжает говорить  <some words> через <things>
+
+<subject 2> отключает <things> и откладывает в сторону, затем говорит еще <some words>
+
+<subject 1> потирает нос, попутно смотрит в свой <things>, затем говорит <some words>
+
+<subject 2> изумлен ходу мысли <subject 1>. Попутно <subject 2> затягивается через <things>

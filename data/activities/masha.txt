@@ -1,0 +1,59 @@
+<subject 1> и <subject 2> сидят за столом. <subject 2> говорит  <some words>
+ 
+<subject 1> говорит  <some words>
+ 
+<subject 1> сидит за столом, покрытым <things> и держит в руках <things>, читая их вслух
+ 
+<subject 1> встаёт и идёт отбирать по парам и складывать  <things>. <subject 1> говорит  <some words>
+ 
+<subject 1> набирает номер мамы, держит в руках <things>
+ 
+<subject 1> говорит  <some words> . <subject 1> заканчивает разговор внезапно и вешает  <things> <subject 1> говорит  <some words>
+ 
+<sound>. <subject 1> говорит  <some words>
+ 
+<subject 1> открывает <things> и приветствует <subject 3> и <subject 4>
+ 
+<subject 3> говорит  <some words>
+ 
+<subject 1> говорит  <some words>
+ 
+<subject 4> говорит <some words> и <emotions 1>
+ 
+<subject 1> говорит  <some words>
+ 
+<subject 3> говорит  <some words>
+ 
+<subject 1> говорит  <some words>
+ 
+<subject 4> говорит  <some words>
+ 
+<subject 3> говорит  <some words>
+ 
+<subject 1> говорит  <some words> и приглашает внутрь
+ 
+<subject 3,4> входят
+ 
+<subject 1> говорит  <some words>
+ 
+<subject 4> говорит  <some words> и оглядывается по сторонам
+ 
+<subject 1> говорит  <some words>
+ 
+<subject 3> нервно барабанит пальцами по вискам, говорит <some words>
+ 
+<subject 1> говорит  <some words>, обращается к <subject 4>
+ 
+<subject 4> говорит  <some words>
+ 
+<subject 1> говорит  <some words>
+ 
+<subject 4> говорит  <some words> и <emotions 2>
+ 
+<subject 3> говорит  <some words>
+ 
+<subject 1> <emotions 3> говорит  <some words>
+ 
+<subject 4> говорит  <some words>
+
+<subject 1> оглядывая людей говорит  <some words>

@@ -1,0 +1,2 @@
+class Speechs < PlainFileRandomAccess
+end

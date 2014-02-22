@@ -1,0 +1,2 @@
+class Emotions < PlainFileRandomAccess
+end
