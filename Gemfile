@@ -4,3 +4,4 @@ gem 'slim'
 gem "thin"
 gem 'rerun'
 gem 'unicode'
+gem 'sass'

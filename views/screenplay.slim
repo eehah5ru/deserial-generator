@@ -1,36 +1,45 @@
-h2 Сценарий
+link rel="stylesheet" media="screen, projection" href="/stylesheets/screenplay.css"
 
-.pure-g
-	.pure-u-1-1
-		h3 Жанр
-	.pure-u-2-3
-		p
-			= @screenplay.genre
-			
-	.pure-u-1-1
-		h3 Герои
-	.pure-u-2-3
-		- @screenplay.characters.each do |character|
+.pure-g id="content" class="bkg-color-#{Random.rand(0..5)}"
+	.pure-u-1-1 class="bkg-color-#{Random.rand(0..5)}"
+		.pure-u-1-3 class="bkg-color-#{Random.rand(0..5)}"
+			h2 
+				| Сценарий
+	.pure-u-1-1 class="bkg-color-#{Random.rand(0..5)}"
+		.pure-u-1-3 class="bkg-color-#{Random.rand(0..5)}"
+			h3 Жанр
+	.pure-u-1-1 class="bkg-color-#{Random.rand(0..5)}"	
+		.pure-u-2-3 class="bkg-color-#{Random.rand(0..5)}"
 			p
-				strong => character.name
+				= @screenplay.genre
+			
+	.pure-u-1-3 class="bkg-color-#{Random.rand(0..5)}"
+		h3 Герои
+	.pure-u-2-3 class="bkg-color-#{Random.rand(0..5)}"
+		- @screenplay.characters.each do |character|
+			p class="bkg-color-#{Random.rand(0..5)}"
+				strong class="bkg-color-#{Random.rand(0..5)}"
+					=> character.name
 				= character.about
 		
-	.pure-u-1-1
+	.pure-u-1-1 class="bkg-color-#{Random.rand(0..5)}"
 		h3 Реквизит
-	.pure-u-2-3
-		p
+	.pure-u-2-3 class="bkg-color-#{Random.rand(0..5)}"
+		p class="bkg-color-#{Random.rand(0..5)}"
 			= @screenplay.all_things.join(". ")
 			
-	.pure-u-1-1
-		h3 Монтажные кадры
-		- @screenplay.activities.each_with_index do |activity, i|
+	.pure-u-1-1 class="bkg-color-#{Random.rand(0..5)}"
+		h3 class="bkg-color-#{Random.rand(0..5)}"
+			| Монтажные кадры
+	- @screenplay.activities.each_with_index do |activity, i|
+		.pure-u-1-1 class="bkg-color-#{Random.rand(0..5)}"
 			h4 
 				| Кадр
 				=< i + 1
 			/ h5 Участвует персонажей
 			/ => activity.activity.characters_count
-			
-			.pure-u-1-3
+		
+			.pure-u-1-3 class="bkg-color-#{Random.rand(0..5)}"
 				h5 
 					| Место действия
 				= activity.space		
@@ -51,8 +60,12 @@ h2 Сценарий
 				h5 
 					| Освещение
 				= activity.lighting			
-					
-			.pure-u-1-3
+				
+			.pure-u-1-3 class="bkg-color-#{Random.rand(0..5)}"
 				h5 
 					| Действие
 				= activity.wrapped_text
+			.pure-u-1-3 class="bkg-color-#{Random.rand(0..5)}"
+				- Random.rand(2..20).times do
+					| &nbsp
+					br/
