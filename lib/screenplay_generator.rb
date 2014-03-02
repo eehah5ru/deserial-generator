@@ -49,6 +49,10 @@ class ScreenplayBuilder
 			screenplay.characters = RandomArray.new(@characters_builder.build_many(Options.get.characters_count))
 		end
 		
+		#
+		# genre
+		#
+		screenplay.genre = Genres.data.get.first
 		
 		# # dresses
 		# screenplay.all_dresses = RandomArray.new(Dresses.dresses.get(Options.get.all_dresses_min, Options.get.all_dresses_max))

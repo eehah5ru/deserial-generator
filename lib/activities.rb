@@ -249,12 +249,24 @@ class ActivityInContextBuilder
 		#
 		result.duration = Random.rand(5..15)
 		
+		
+		#
+		# lighting
+		#
+		result.lighting = Lightings.data.get.first
+		
+		#
+		# space
+		#
+		result.space = Spaces.data.get.first
+		
 		#
 		# things
 		#
 		result.things = @all_things.get 1, result.activity.things_count
 		
-		pp result
+		
+		# pp result
 		
 		return result
 	end

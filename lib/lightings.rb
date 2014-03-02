@@ -1,0 +1,2 @@
+class Lightings < PlainFileRandomAccess
+end

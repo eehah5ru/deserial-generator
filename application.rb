@@ -15,6 +15,8 @@ require_relative "lib/camera_directions.rb"
 require_relative "lib/speechs.rb"
 require_relative "lib/spaces.rb"
 require_relative "lib/sounds.rb"
+require_relative "lib/lightings.rb"
+require_relative "lib/genres.rb"
 require_relative "lib/predefined_characters.rb"
 
 
@@ -88,8 +90,12 @@ def generate_screenplay params
 	CameraDirections.data_file = "data/camera_directions.txt"			
 	Speechs.data_file = "data/speechs.txt"	
 	Spaces.data_file = "data/spaces.txt"			
-	Sounds.data_file = "data/sounds.txt"				
+	Sounds.data_file = "data/sounds.txt"	
+	Lightings.data_file = "data/lightings.txt"	
+	Genres.data_file = "data/genres.txt"						
 	PredefinedCharacters.characters_file = "data/predefined_characters.yml"
+	
+	# pp Spaces.data
 	
 	# Activities.activities.get
 	

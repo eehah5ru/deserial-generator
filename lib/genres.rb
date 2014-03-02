@@ -1,0 +1,2 @@
+class Genres < PlainFileRandomAccess
+end

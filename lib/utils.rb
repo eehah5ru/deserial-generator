@@ -51,6 +51,7 @@ end
 
 class PlainFileRandomAccess < RandomArray
 	def self.splitter= a_splitter
+		# STDOUT.puts "!!!!!!!!\n!!!!!!!!\n!!!!!!!!!"
 		@splitter = a_splitter
 	end
 	

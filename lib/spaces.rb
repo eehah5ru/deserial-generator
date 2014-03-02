@@ -1,3 +1,3 @@
 class Spaces < PlainFileRandomAccess
-	splitter = "\n\n"
+	self.splitter = "\n\n"
 end
