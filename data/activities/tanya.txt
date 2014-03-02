@@ -18,7 +18,7 @@
 
 <subject 3> кладет <things> на <things> и идет к <things>. <subject 3> спрашивает <some words>.
 
- <subject 1> рвет <things> на голову <Subjec 2>
+ <subject 1> рвет <things> на голову <subject 2>
 
 <subject 3> замечает S2 и <emotions> восклицает <some words>. <subject 3> указывает на <subject 2> и спрашивает <some words>
 

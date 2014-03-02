@@ -28,9 +28,14 @@ h2 Сценарий
 				h5 
 					| Персонажи
 				- activity.characters.each do |num, character|
-					strong
-						=> character.name
+					=> character.name
 					br/
+				h5 
+					| Камера
+				= activity.camera
+				| .
+				=< activity.wrapped_camera_direction 
+					
 			.pure-u-1-3
 				h5 
 					| Действие

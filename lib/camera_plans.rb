@@ -1,0 +1,2 @@
+class CameraPlans < PlainFileRandomAccess
+end

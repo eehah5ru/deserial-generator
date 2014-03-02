@@ -1,0 +1,2 @@
+class CameraMovements < PlainFileRandomAccess
+end

@@ -1,0 +1,2 @@
+class CameraDirections < PlainFileRandomAccess
+end

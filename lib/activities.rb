@@ -7,9 +7,12 @@ require "unicode"
 #
 #
 class Activity
+	SUBJECT_REGEXP = /<subject *\d+[^>]*>/i
 	EMOTIONS_REGEXP = /<emotions?.*>/i
 	SPEECH_REGEXP = /<some +words?.*>/i
 	SPACE_REGEXP = /<spaces?.*>/i	
+	CAMERA_MOVEMENT_REGEXP = /<camera.*>/i
+	SOUND_REGEXP = /<sound.*>/i	
 
 	attr_reader :text
 	
@@ -19,7 +22,7 @@ class Activity
 	
 	
 	def characters_count
-		return Unicode::downcase(text).scan(/<subject *\d+>/).collect{ |i| i.scan(/\d+/)}.uniq.length
+		return Unicode::downcase(text).scan(Activity.SUBJECT_REGEXP).collect{ |i| i.scan(/\d+/)}.uniq.length
 	end
 	
 	
@@ -42,10 +45,18 @@ class Activity
 		return Unicode::downcase(text).scan(SPACE_REGEXP).length		
 	end
 	
+	def camera_movements_count
+		return Unicode::downcase(text).scan(CAMERA_MOVEMENT_REGEXP).length				
+	end
+	
+	def sounds_count
+		return Unicode::downcase(text).scan(SOUND_REGEXP).length				
+	end	
+	
 	
 	
 	def character_numbers
-		return Unicode::downcase(text).scan(/<subject *\d+>/).collect{ |i| i.scan(/\d+/)}.uniq.collect{|i| i.first.to_i}.sort
+		return Unicode::downcase(text).scan(SUBJECT_REGEXP).collect{ |i| i.scan(/\d+/)}.uniq.collect{|i| i.first.to_i}.sort
 	end
 end
 
@@ -55,9 +66,20 @@ end
 #
 #
 class ActivityInContext < OpenStruct
+
+	def wrapped_camera_direction
+		result = self.camera_direction.dup
+		
+		return wrap_subjects(result)
+	end
+	
+	
 	def wrapped_text
 		result = self.activity.text
 		
+		
+		result = wrap_camera_movements(result)
+				
 		result = wrap_subjects(result)
 		
 		result = wrap_things(result)
@@ -67,6 +89,8 @@ class ActivityInContext < OpenStruct
 		result = wrap_speechs(result)
 
 		result = wrap_spaces(result)		
+		
+		result = wrap_sounds(result)		
 		
 		return result
 	end
@@ -79,7 +103,7 @@ class ActivityInContext < OpenStruct
 		result = a_text.dup
 
 		self.characters.each do |num, character|
-			result.gsub!(/<subject *#{num}>/i, character.name)
+			result.gsub!(/<subject *#{num}[^>]*>/i, character.name)
 		end
 		
 		return result
@@ -128,6 +152,27 @@ class ActivityInContext < OpenStruct
 		
 		return result
 	end
+	
+	
+	def wrap_camera_movements a_text
+		result = a_text.dup
+		
+		self.activity.camera_movements_count.times do 
+			result.sub!(Activity::CAMERA_MOVEMENT_REGEXP, CameraMovements.data.get.first)
+		end
+		
+		return result
+	end
+	
+	def wrap_sounds a_text
+		result = a_text.dup
+		
+		self.activity.sounds_count.times do 
+			result.sub!(Activity::SOUND_REGEXP, Sounds.data.get.first)
+		end
+		
+		return result
+	end	
 end
 
 
@@ -162,6 +207,17 @@ class ActivityInContextBuilder
 		# result.characters.each do |num, character|
 		# 	result.character_dresses[num] = @all_dresses.get(Options.get.dresses_min, Options.get.dresses_max)
 		# end
+		
+		
+		#
+		# initial camera plan
+		#
+		result.camera = CameraPlans.data.get.first		
+		
+		#
+		# camera direction
+		#
+		result.camera_direction = CameraDirections.data.get.first
 		
 		#
 		# things

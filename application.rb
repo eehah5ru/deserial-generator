@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'slim'
 require 'yaml'
+require 'securerandom'
 require_relative "lib/options.rb"
 require_relative "lib/characters_generator.rb"
 require_relative "lib/screenplay_generator.rb"
@@ -8,8 +9,12 @@ require_relative "lib/activities.rb"
 require_relative "lib/dresses.rb"
 require_relative "lib/things.rb"
 require_relative "lib/emotions.rb"
+require_relative "lib/camera_plans.rb"
+require_relative "lib/camera_movements.rb"
+require_relative "lib/camera_directions.rb"
 require_relative "lib/speechs.rb"
 require_relative "lib/spaces.rb"
+require_relative "lib/sounds.rb"
 require_relative "lib/predefined_characters.rb"
 
 
@@ -78,8 +83,12 @@ def generate_screenplay params
 	DressesCategorizedBuilder.dresses_file = "data/dresses_categorized.yml"
 	Things.things_file = "data/things.txt"
 	Emotions.data_file = "data/emotions.txt"	
+	CameraMovements.data_file = "data/camera_movements.txt"		
+	CameraPlans.data_file = "data/camera_plans.txt"		
+	CameraDirections.data_file = "data/camera_directions.txt"			
 	Speechs.data_file = "data/speechs.txt"	
 	Spaces.data_file = "data/spaces.txt"			
+	Sounds.data_file = "data/sounds.txt"				
 	PredefinedCharacters.characters_file = "data/predefined_characters.yml"
 	
 	# Activities.activities.get
@@ -90,6 +99,5 @@ def generate_screenplay params
 	
 	return screenplay_builder.build
 end
-
 
 
