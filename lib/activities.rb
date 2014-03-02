@@ -1,6 +1,13 @@
+#encoding: utf-8
 require "unicode"
 
 
+
+module ActivityUtils
+	def self.characters_count (a_text)
+		return Unicode::downcase(a_text).scan(Activity::SUBJECT_REGEXP).collect{ |i| i.scan(/\d+/)}.uniq.length
+	end
+end
 #
 #
 # Activity
@@ -70,7 +77,25 @@ class ActivityInContext < OpenStruct
 	def wrapped_camera_direction
 		result = self.camera_direction.dup
 		
-		return wrap_subjects(result)
+		result =  wrap_subjects(result)
+		
+		if ActivityUtils.characters_count(result) > 0
+			result.gsub!(Activity::SUBJECT_REGEXP, '[нрзбр.]')
+		end
+		
+		return result
+	end
+	
+	def wrapped_camera_plan
+		result = self.camera_plan.dup
+		
+		result = wrap_subjects(result)
+		
+		if ActivityUtils.characters_count(result) > 0
+			result.gsub!(Activity::SUBJECT_REGEXP, '[нрзбр.]')
+		end
+		
+		return result		
 	end
 	
 	
@@ -212,12 +237,17 @@ class ActivityInContextBuilder
 		#
 		# initial camera plan
 		#
-		result.camera = CameraPlans.data.get.first		
+		result.camera_plan = CameraPlans.data.get.first		
 		
 		#
 		# camera direction
 		#
 		result.camera_direction = CameraDirections.data.get.first
+		
+		#
+		# duration in seconds
+		#
+		result.duration = Random.rand(5..15)
 		
 		#
 		# things
