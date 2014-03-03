@@ -2,7 +2,7 @@ $( document ).ready(function() {
 	// alert("!!!!!");
 	$('#content').find("div").hover(function () {
 		// alert("!!!!!");
-		toggleFontSize(this);
+		// toggleFontSize(this);
 	});
 });
 
