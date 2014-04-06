@@ -18,7 +18,7 @@ class Character < OpenStruct
 			self.heigh,
 			self.body,
 			self.hairs,
-			self.hair_lebgth,
+			self.hair_length,
       self.appearance,
       self.features,
       self.other,
@@ -33,7 +33,7 @@ class Character < OpenStruct
 			self.heigh,
 			self.body,
 			self.hairs,
-			self.hair_lebgth,
+			self.hair_length,
       self.appearance,
       self.features,
       self.other,
@@ -86,7 +86,9 @@ class CharacterBuilder
 		# dresses
 		# character.all_dresses = RandomArray.new
 		character.all_dresses = DressesCategorizedBuilder.builder.build
-    
+		
+		character.white_bulb_all_dresses = DressesCategorizedBuilder.builder.build		
+		
     return character
   end  
 	

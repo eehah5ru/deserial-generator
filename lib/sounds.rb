@@ -1,2 +1,0 @@
-class Sounds < PlainFileRandomAccess
-end

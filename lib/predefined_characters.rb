@@ -67,6 +67,14 @@ class PredefinedCharacters
 			result << PredefinedCharacter.new(:name => raw_character["name"], :description => raw_character["description"])
 		end
 		
+		#
+		# add dresses in white flash scenes
+		#
+		result.each do |character|
+			character.white_bulb_all_dresses = DressesCategorizedBuilder.builder.build				
+		end
+		
+		
 		return result
 	end
 end

@@ -1,0 +1,2 @@
+class NonDiegeticSounds < PlainFileRandomAccess
+end

@@ -193,7 +193,7 @@ class ActivityInContext < OpenStruct
 		result = a_text.dup
 		
 		self.activity.sounds_count.times do 
-			result.sub!(Activity::SOUND_REGEXP, Sounds.data.get.first)
+			result.sub!(Activity::SOUND_REGEXP, DiegeticSounds.data.get.first)
 		end
 		
 		return result
@@ -264,6 +264,11 @@ class ActivityInContextBuilder
 		# things
 		#
 		result.things = @all_things.get 1, result.activity.things_count
+		
+		#
+		# Non-diegetic sound
+		#
+		result.non_diegetic_sound = NonDiegeticSounds.data.get.first if Random.rand(0..100) > 70
 		
 		
 		# pp result

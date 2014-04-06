@@ -1,0 +1,2 @@
+class DiegeticSounds < PlainFileRandomAccess
+end

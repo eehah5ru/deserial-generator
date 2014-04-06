@@ -21,6 +21,10 @@ link rel="stylesheet" media="screen, projection" href="/stylesheets/screenplay.c
 				strong class="bkg-color-#{Random.rand(0..5)}"
 					=> character.name
 				= character.about
+				/ br/
+				/ b
+				/ 	| Во время флешбеков отдет в: 
+				/ =< character.white_bulb_all_dresses
 		
 	.pure-u-1-1 class="bkg-color-#{Random.rand(0..5)}"
 		h3 Реквизит
@@ -60,6 +64,9 @@ link rel="stylesheet" media="screen, projection" href="/stylesheets/screenplay.c
 				h5 
 					| Освещение
 				= activity.lighting			
+				h5 
+					| Звуки за кадром
+				= activity.non_diegetic_sound || "Тишина"				
 				
 			.pure-u-1-3 class="bkg-color-#{Random.rand(0..5)}"
 				h5 
