@@ -89,6 +89,8 @@ class CharacterBuilder
 		
 		character.white_bulb_all_dresses = DressesCategorizedBuilder.builder.build		
 		
+		binding.pry
+		
     return character
   end  
 	

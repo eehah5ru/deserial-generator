@@ -1,0 +1,9 @@
+Host: localhost:9292
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:33.0) Gecko/20100101 Firefox/33.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+DNT: 1
+Referer: http://localhost:9292/screenplay
+Connection: keep-alive
+Cache-Control: max-age=0

@@ -2,6 +2,10 @@ require 'sinatra'
 require 'slim'
 require 'yaml'
 require 'securerandom'
+
+require 'pry'
+require 'ap'
+
 require_relative "lib/options.rb"
 require_relative "lib/characters_generator.rb"
 require_relative "lib/screenplay_generator.rb"
@@ -20,6 +24,49 @@ require_relative "lib/lightings.rb"
 require_relative "lib/genres.rb"
 require_relative "lib/predefined_characters.rb"
 
+require_relative "lib/presentation.rb"
+
+
+
+Pry.pager = false
+Pry.quiet = true
+
+# command_set = Pry::CommandSet.new do
+#   command "greet" do |name|
+#     output.puts "hello #{name}"
+#   end
+# end
+
+Pry.hooks.delete_hooks(:before_session)
+
+Pry::Hooks.new.add_hook(:before_session, :default) do |out, target, _pry_|
+  # next if _pry_.quiet?
+  # _pry_.run_command("whereami --quiet")
+end
+
+
+Pry.config.hooks.add_hook(:when_started, :print_screenplay) do |out, target, _pry_|
+	_pry_.current_binding.eval("Presentation.show_screenplay result if defined?(result) and result.is_a?(Screenplay)")
+	sleep 1
+end
+
+Pry.config.hooks.add_hook(:when_started, :print_character) do |out, target, _pry_|
+	_pry_.current_binding.eval("Presentation.show_character character if defined?(character) and character.is_a?(Character)")
+	sleep 1
+end
+
+Pry.config.hooks.add_hook(:when_started, :print_activity) do |out, target, _pry_|
+	_pry_.current_binding.eval("Presentation.show_activity result if defined?(result) and result.is_a?(ActivityInContext)")
+	sleep 1
+end
+
+Pry.config.hooks.add_hook(:when_started, :print_whereami) do |out, target, _pry_|
+	next if rand * 100 < 50
+	
+	num_lines = (rand * 20).to_i
+
+  _pry_.run_command("whereami #{num_lines}")
+end
 
 
 #
@@ -46,6 +93,8 @@ end
 #
 #
 get '/screenplay' do
+  # binding.pry
+	# Pry.start binding, :commands => command_set
 	slim :screenplay_form
 end
 
@@ -105,7 +154,11 @@ def generate_screenplay params
 	
 	screenplay_builder = ScreenplayBuilder.new characters_builder
 	
-	return screenplay_builder.build
+	result = screenplay_builder.build
+
+	binding.pry
+
+	return result
 end
 
 

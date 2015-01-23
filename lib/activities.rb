@@ -273,6 +273,8 @@ class ActivityInContextBuilder
 		
 		# pp result
 		
+		binding.pry
+		
 		return result
 	end
 	

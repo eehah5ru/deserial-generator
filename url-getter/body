@@ -1,0 +1,4 @@
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 213
+
+characters_count=6&appearance_items_min=3&appearance_items_max=6&features_items_min=2&features_items_max=9&other_items_min=3&other_items_max=8&activities_min=30&activities_max=50&all_things_min=3&all_things_max=12
