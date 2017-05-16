@@ -7,3 +7,5 @@ gem 'unicode'
 gem 'sass'
 
 gem "capistrano"
+gem "capistrano-bundler"
+# gem "capistrano-passanger"
