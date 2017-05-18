@@ -11,10 +11,13 @@ GEM
     capistrano-bundler (1.2.0)
       capistrano (~> 3.1)
       sshkit (~> 1.2)
+    capistrano-rvm (0.1.2)
+      capistrano (~> 3.0)
+      sshkit (~> 1.2)
     i18n (0.8.1)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
-    net-ssh (4.1.0)
+    net-ssh (3.0.1)
     rack (1.5.2)
     rack-protection (1.5.2)
       rack
@@ -40,9 +43,12 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   capistrano-bundler
+  capistrano-rvm
+  net-ssh (= 3.0.1)
   sass
   sinatra
   slim
+  sshkit
   unicode
 
 BUNDLED WITH
