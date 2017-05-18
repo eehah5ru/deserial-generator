@@ -63,5 +63,5 @@ server 'calcium.locum.ru',
 #     # password: "please use keys"
 #   }
 
- set :application, "deserial"
- set :deploy_to, "/home/hosting_soobscha/projects/deserial"
+# set :application, "deserial"
+# set :deploy_to, "/home/hosting_soobscha/projects/deserial"
