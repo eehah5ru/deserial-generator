@@ -14,4 +14,7 @@ gem "capistrano"
 gem "capistrano-bundler"
 gem "capistrano-rvm"
 
+# Use Unicorn as the app server
+gem 'unicorn'
+
 # gem "capistrano-passanger"
